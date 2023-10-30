@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/app_bar_home"
+        android:icon="@drawable/home_icon"
+        android:title="@string/home"
+        android:iconTint="@color/colorPrimary"
+
+        />
+
+    <item
+        android:id="@+id/app_bar_bookmark"
+        android:icon="@drawable/bookmark_filled"
+        android:title="@string/bookmark"/>
+</menu>
