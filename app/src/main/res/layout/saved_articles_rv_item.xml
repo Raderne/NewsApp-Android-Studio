@@ -33,9 +33,9 @@
         android:layout_height="50dp"
         android:src="@drawable/baseline_delete_24"
         android:layout_gravity="bottom|end"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:background="@color/transparant"
-        android:padding="5dp"
+        android:padding="10dp"
         android:scaleType="centerCrop"
         />
 
