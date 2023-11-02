@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewsApp</string>
+    <string name="app_name">Haber Toplayıcı</string>
     <string name="main_title">İlk günden\nhaberdar olun</string>
     <string name="main_subtitle">Kusursuz Haber Uygulamamızla\nen son Haberleri keşfedin</string>
     <string name="main_button">Başlayalım</string>
