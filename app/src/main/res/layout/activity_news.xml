@@ -22,6 +22,33 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/haber"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunitoblack"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newsHeader"
+                    android:textSize="30sp"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/nunitoblack"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/llSearch"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -70,6 +97,16 @@
                 android:scrollbars="none"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/top_news_rv_item" />
+
+            <TextView
+                android:id="@+id/tvTumHaberler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nunitoblack"
+                android:text="@string/tum_haberler"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCategory"

@@ -10,8 +10,8 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.cloud_database.Firebase_storage;
 import com.red.newsapp.news_adapters.SavedArticlesAdapter;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class SavedArticlesActivity extends AppCompatActivity {
     private RecyclerView savedArticlesRV;
     private ScrollView scrollView;
     private ArrayList<GONDER> savedArticlesArrayList;
-    private SavedArticlesAdapter savedArticlesAdapter;
+    public SavedArticlesAdapter savedArticlesAdapter;
     private ProgressBar progressBar;
     private BottomNavigationView bottomNavigationView;
 
@@ -51,24 +51,8 @@ public class SavedArticlesActivity extends AppCompatActivity {
         try {
             progressBar.setVisibility(ProgressBar.GONE);
             scrollView.setVisibility(ScrollView.VISIBLE);
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            db.collection("articles").get().addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    for (int i = 0; i < task.getResult().size(); i++) {
-                        GONDER article = new GONDER();
-                        article.setTitle(task.getResult().getDocuments().get(i).get("title").toString());
-                        article.setDescription(task.getResult().getDocuments().get(i).get("description").toString());
-                        article.setUrlToImage(task.getResult().getDocuments().get(i).get("imageUrl").toString());
-                        article.setUrl(task.getResult().getDocuments().get(i).get("newsUrl").toString());
-                        article.setAuthor(task.getResult().getDocuments().get(i).get("author").toString());
-                        article.setContent(task.getResult().getDocuments().get(i).get("content").toString());
-                        savedArticlesArrayList.add(article);
-                    }
-                    savedArticlesAdapter.notifyDataSetChanged();
-                } else {
-                    Toast.makeText(this, "kayıtlı makale yok", Toast.LENGTH_SHORT).show();
-                }
-            });
+            Firebase_storage firebase_storage = new Firebase_storage();
+            firebase_storage.getAllSavedArticles(savedArticlesAdapter, savedArticlesArrayList);
         } catch (Exception e) {
             Toast.makeText(this, "kayıtlı makale yok", Toast.LENGTH_SHORT).show();
         }

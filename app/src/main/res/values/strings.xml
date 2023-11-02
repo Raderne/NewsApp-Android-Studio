@@ -7,6 +7,7 @@
     <string name="client_id">310341090202-ggf2185ggi5eb40sfqvbj6pqdl2rhq3d.apps.googleusercontent.com</string>
     <string name="search">Makale Ara</string>
     <string name="son_haberler">Son Haberler</string>
+    <string name="tum_haberler">Tüm Haberler</string>
 
     <string name="api_key">278f45056a454eb7977466845b59c31c</string>
     <string name="published_by">Tarafından yayınlandı:</string>
@@ -15,4 +16,6 @@
     <string name="saved_articles">Kayıtlı Makaleler</string>
     <string name="bookmark">bookmark</string>
     <string name="home">home</string>
+    <string name="haber">Haber</string>
+    <string name="newsHeader">Toplayıcı</string>
 </resources>
