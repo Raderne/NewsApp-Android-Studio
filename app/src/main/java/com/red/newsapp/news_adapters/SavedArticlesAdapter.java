@@ -1,5 +1,6 @@
 package com.red.newsapp.news_adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,17 +15,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.red.newsapp.NewsDetailsActivity;
 import com.red.newsapp.R;
-import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.api_response.Article;
 import com.red.newsapp.cloud_database.Firebase_storage;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class SavedArticlesAdapter extends RecyclerView.Adapter<SavedArticlesAdapter.SavedArticlesViewHolder>{
-    private ArrayList<GONDER> articlesArrayList;
+    private ArrayList<Article> articlesArrayList;
     private Context context;
 
-    public SavedArticlesAdapter(ArrayList<GONDER> articlesArrayList, Context context) {
+    public SavedArticlesAdapter(ArrayList<Article> articlesArrayList, Context context) {
         this.articlesArrayList = articlesArrayList;
         this.context = context;
     }
@@ -37,8 +38,8 @@ public class SavedArticlesAdapter extends RecyclerView.Adapter<SavedArticlesAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SavedArticlesAdapter.SavedArticlesViewHolder holder, int position) {
-        GONDER articles = articlesArrayList.get(position);
+    public void onBindViewHolder(@NonNull SavedArticlesAdapter.SavedArticlesViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Article articles = articlesArrayList.get(position);
         holder.bottomCardAuthor.setText(articles.getAuthor());
         holder.bottomCardTitle.setText(articles.getTitle());
 

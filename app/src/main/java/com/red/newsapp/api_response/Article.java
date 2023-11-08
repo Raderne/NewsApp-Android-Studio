@@ -1,10 +1,6 @@
 package com.red.newsapp.api_response;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
-
-public class GONDER {
+public class Article {
     private String author;
     private String title;
     private String description;
@@ -12,7 +8,7 @@ public class GONDER {
     private String urlToImage;
     private String content;
 
-    public GONDER(String author, String title, String description, String url, String urlToImage, String content) {
+    public Article(String author, String title, String description, String url, String urlToImage, String content) {
         this.author = author;
         this.title = title;
         this.description = description;
@@ -21,7 +17,7 @@ public class GONDER {
         this.content = content;
     }
 
-    public GONDER() {
+    public Article() {
 
     }
 

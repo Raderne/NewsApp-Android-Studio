@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!-- login page design has image in background image with black gradient at the bottom and a text with button -->
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -69,6 +67,4 @@
             />
 
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,10 @@
 package com.red.newsapp.cloud_database;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.api_response.Article;
 import com.red.newsapp.news_adapters.SavedArticlesAdapter;
 
 import java.util.ArrayList;
@@ -44,11 +43,11 @@ public class Firebase_storage {
         db.collection("articles").document(title).delete();
     }
 
-    public void getAllSavedArticles(SavedArticlesAdapter savedArticlesAdapter, ArrayList<GONDER> articlesArray) {
+    public void getAllSavedArticles(SavedArticlesAdapter savedArticlesAdapter, ArrayList<Article> articlesArray) {
         db.collection("articles").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (int i = 0; i < task.getResult().size(); i++) {
-                    GONDER article = new GONDER();
+                    Article article = new Article();
                     article.setTitle(task.getResult().getDocuments().get(i).get("title").toString());
                     article.setDescription(task.getResult().getDocuments().get(i).get("description").toString());
                     article.setUrlToImage(task.getResult().getDocuments().get(i).get("imageUrl").toString());

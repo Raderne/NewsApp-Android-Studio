@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -13,7 +12,7 @@ import android.widget.Toast;
 
 import com.red.newsapp.api_response.API;
 import com.red.newsapp.api_response.Articles;
-import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.api_response.Article;
 import com.red.newsapp.news_adapters.EverythingNewsAdapter;
 
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class SearchResultActivity extends AppCompatActivity {
     private EditText etSearch;
     private ImageButton searchButton;
     private RecyclerView searchResultRV;
-    private ArrayList<GONDER> searchResultArrayList;
+    private ArrayList<Article> searchResultArrayList;
     private EverythingNewsAdapter searchResultAdapter;
 
 
@@ -84,9 +83,9 @@ public class SearchResultActivity extends AppCompatActivity {
                     tvSearchResult.setText(searchedInput + " için yaklaşık " + articles.getTotalResults() + " sonuç bulundu.");
                     etSearch.setText(searchedInput);
 
-                    ArrayList<GONDER> articlesArrayList = articles.getArticles();
+                    ArrayList<Article> articlesArrayList = articles.getArticles();
                     for (int i = 0; i < articlesArrayList.size(); i++) {
-                        searchResultArrayList.add(new GONDER(
+                        searchResultArrayList.add(new Article(
                                 articlesArrayList.get(i).getAuthor(),
                                 articlesArrayList.get(i).getTitle(),
                                 articlesArrayList.get(i).getDescription(),

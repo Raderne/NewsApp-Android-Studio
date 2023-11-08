@@ -3,21 +3,21 @@ package com.red.newsapp.api_response;
 import java.util.ArrayList;
 
 public class Articles {
-    private ArrayList<GONDER> articles;
+    private ArrayList<Article> articles;
     private String status;
     private int totalResults;
 
-    public Articles(ArrayList<GONDER> articles, String status, int totalResults) {
+    public Articles(ArrayList<Article> articles, String status, int totalResults) {
         this.articles = articles;
         this.status = status;
         this.totalResults = totalResults;
     }
 
-    public ArrayList<GONDER> getArticles() {
+    public ArrayList<Article> getArticles() {
         return articles;
     }
 
-    public void setArticles(ArrayList<GONDER> articles) {
+    public void setArticles(ArrayList<Article> articles) {
         this.articles = articles;
     }
 

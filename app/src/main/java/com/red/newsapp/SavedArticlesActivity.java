@@ -10,7 +10,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.api_response.Article;
 import com.red.newsapp.cloud_database.Firebase_storage;
 import com.red.newsapp.news_adapters.SavedArticlesAdapter;
 
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class SavedArticlesActivity extends AppCompatActivity {
     private RecyclerView savedArticlesRV;
     private ScrollView scrollView;
-    private ArrayList<GONDER> savedArticlesArrayList;
+    private ArrayList<Article> savedArticlesArrayList;
     public SavedArticlesAdapter savedArticlesAdapter;
     private ProgressBar progressBar;
     private BottomNavigationView bottomNavigationView;

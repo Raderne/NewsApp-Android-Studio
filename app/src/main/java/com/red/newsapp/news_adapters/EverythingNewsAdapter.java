@@ -13,16 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.red.newsapp.NewsDetailsActivity;
 import com.red.newsapp.R;
-import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.api_response.Article;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class EverythingNewsAdapter extends RecyclerView.Adapter<EverythingNewsAdapter.ViewHolder>{
-    private ArrayList<GONDER> articlesArrayList;
+    private ArrayList<Article> articlesArrayList;
     private Context context;
 
-    public EverythingNewsAdapter(ArrayList<GONDER> articlesArrayList, Context context) {
+    public EverythingNewsAdapter(ArrayList<Article> articlesArrayList, Context context) {
         this.articlesArrayList = articlesArrayList;
         this.context = context;
     }
@@ -36,7 +36,7 @@ public class EverythingNewsAdapter extends RecyclerView.Adapter<EverythingNewsAd
 
     @Override
     public void onBindViewHolder(@NonNull EverythingNewsAdapter.ViewHolder holder, int position) {
-        GONDER articles = articlesArrayList.get(position);
+        Article articles = articlesArrayList.get(position);
         holder.bottomCardAuthor.setText(articles.getAuthor());
         holder.bottomCardTitle.setText(articles.getTitle());
 

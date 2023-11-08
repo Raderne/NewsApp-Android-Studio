@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.red.newsapp.api_response.API;
 import com.red.newsapp.api_response.Articles;
-import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.api_response.Article;
 import com.red.newsapp.categories.CategoryRVAdapter;
 import com.red.newsapp.categories.CategoryRVModal;
 import com.red.newsapp.news_adapters.EverythingNewsAdapter;
@@ -35,10 +33,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter.CategoryClickInterface {
-
     private RecyclerView categoryRV, topHeadlinesNewsRV, bottomNewsRV;
-    private ArrayList<GONDER> articlesArrayList;
-    private ArrayList<GONDER> topHeadlinesArticlesArrayList;
+    private ArrayList<Article> articlesArrayList;
+    private ArrayList<Article> topHeadlinesArticlesArrayList;
     private ArrayList<CategoryRVModal> categoryModelArrayList;
     private TopHeadlinesNewsRVAdapter topHeadlinesNewsRVAdapter;
     private CategoryRVAdapter categoryRVAdapter;
@@ -118,10 +115,10 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
             public void onResponse(Call<Articles> call, Response<Articles> response) {
                 if (response.isSuccessful()) {
                     Articles articles = response.body();
-                    ArrayList<GONDER> articlesArray = articles.getArticles();
+                    ArrayList<Article> articlesArray = articles.getArticles();
 
                     for (int i = 0; i < articlesArray.size(); i++) {
-                        articlesArrayList.add(new GONDER(
+                        articlesArrayList.add(new Article(
                                 articlesArray.get(i).getAuthor(),
                                 articlesArray.get(i).getTitle(),
                                 articlesArray.get(i).getDescription(),
@@ -154,10 +151,10 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
             public void onResponse(Call<Articles> call, retrofit2.Response<Articles> response) {
                 if (response.isSuccessful()) {
                     Articles articles = response.body();
-                    ArrayList<GONDER> articlesArray = articles.getArticles();
+                    ArrayList<Article> articlesArray = articles.getArticles();
 
                     for (int i = 0; i < articlesArray.size(); i++) {
-                        topHeadlinesArticlesArrayList.add(new GONDER(
+                        topHeadlinesArticlesArrayList.add(new Article(
                                 articlesArray.get(i).getAuthor(),
                                 articlesArray.get(i).getTitle(),
                                 articlesArray.get(i).getDescription(),

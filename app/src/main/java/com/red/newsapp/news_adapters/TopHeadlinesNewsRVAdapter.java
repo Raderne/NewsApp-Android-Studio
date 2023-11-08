@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.red.newsapp.api_response.GONDER;
+import com.red.newsapp.api_response.Article;
 import com.red.newsapp.NewsDetailsActivity;
 import com.red.newsapp.R;
 import com.squareup.picasso.Picasso;
@@ -18,10 +18,10 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class TopHeadlinesNewsRVAdapter extends RecyclerView.Adapter<TopHeadlinesNewsRVAdapter.ViewHolder> {
-    private ArrayList<GONDER> articlesArrayList;
+    private ArrayList<Article> articlesArrayList;
     private Context context;
 
-    public TopHeadlinesNewsRVAdapter(ArrayList<GONDER> articlesArrayList, Context context) {
+    public TopHeadlinesNewsRVAdapter(ArrayList<Article> articlesArrayList, Context context) {
         this.articlesArrayList = articlesArrayList;
         this.context = context;
     }
@@ -35,7 +35,7 @@ public class TopHeadlinesNewsRVAdapter extends RecyclerView.Adapter<TopHeadlines
 
     @Override
     public void onBindViewHolder(@NonNull TopHeadlinesNewsRVAdapter.ViewHolder holder, int position) {
-        GONDER articles = articlesArrayList.get(position);
+        Article articles = articlesArrayList.get(position);
         holder.cardAuthor.setText(articles.getAuthor());
         holder.cardTitle.setText(articles.getTitle());
 
