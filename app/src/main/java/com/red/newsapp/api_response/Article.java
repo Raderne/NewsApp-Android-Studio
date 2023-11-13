@@ -69,23 +69,3 @@ public class Article {
         this.content = content;
     }
 }
-
-//{
-//        "status": "ok",
-//        "totalResults": 35,
-//        "articles": [
-//            {
-//                "source": {
-//                "id": null,
-//                "name": "CNBC"
-//                },
-//                "author": "Lee Ying Shan",
-//                "title": "Russia's Putin speaks at China's Belt and Road forum in rare international appearance - CNBC",
-//                "description": "Russian President Vladimir Putin said the Belt and Road idea \"folds logically within multilateral efforts\" to increase global cooperation.",
-//                "url": "https://www.cnbc.com/2023/10/18/russians-vladimir-putin-speaks-at-chinas-belt-and-road-forum-.html",
-//                "urlToImage": "https://image.cnbcfm.com/api/v1/image/107318903-1697602700881-gettyimages-1730510609-AFP_33YK49A.jpeg?v=1697603878&w=1920&h=1080",
-//                "publishedAt": "2023-10-18T03:50:00Z",
-//                "content": "Russia's President Vladimir Putin and Chinese President Xi Jinping walk side by side to a group photo session during the third Belt and Road Forum for International Cooperation at the Great Hall of t… [+3075 chars]"
-//            },
-//        ]
-//}
