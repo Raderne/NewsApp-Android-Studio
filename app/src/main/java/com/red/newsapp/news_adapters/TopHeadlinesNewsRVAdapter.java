@@ -45,7 +45,6 @@ public class TopHeadlinesNewsRVAdapter extends RecyclerView.Adapter<TopHeadlines
             Picasso.get().load(R.color.black).into(holder.topHeadlinesNewsImage);
         }
 
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

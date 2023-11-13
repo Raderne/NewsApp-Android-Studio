@@ -37,7 +37,7 @@
         android:background="@color/transparant"
         android:padding="10dp"
         android:scaleType="centerCrop"
-        />
+        android:contentDescription="Makale Sil" />
 
     <RelativeLayout
         android:layout_width="match_parent"
