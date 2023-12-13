@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.red.newsapp.NewsDetailsActivity;
 import com.red.newsapp.R;
 import com.red.newsapp.api_response.Article;
-import com.red.newsapp.cloud_database.Firebase_storage;
+import com.red.newsapp.Services.cloud_database.Firebase_storage;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

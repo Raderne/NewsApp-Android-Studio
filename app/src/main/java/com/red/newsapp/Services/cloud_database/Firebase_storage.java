@@ -1,4 +1,4 @@
-package com.red.newsapp.cloud_database;
+package com.red.newsapp.Services.cloud_database;
 
 import android.util.Log;
 

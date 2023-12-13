@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.red.newsapp.api_response.Article;
-import com.red.newsapp.cloud_database.Firebase_storage;
+import com.red.newsapp.Services.cloud_database.Firebase_storage;
 import com.red.newsapp.news_adapters.SavedArticlesAdapter;
 
 import java.util.ArrayList;
