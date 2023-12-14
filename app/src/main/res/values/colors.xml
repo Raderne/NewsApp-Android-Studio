@@ -8,4 +8,6 @@
     <color name="colorText">#120606</color>
     <color name="colorSubText">#8C8C8C</color>
     <color name="transparant">#00000000</color>
+
+    <color name="colorPrimaryBLUE">#6C63FF</color>
 </resources>

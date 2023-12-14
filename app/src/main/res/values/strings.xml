@@ -19,4 +19,8 @@
     <string name="haber">Haber</string>
     <string name="newsHeader">Toplayıcı</string>
     <string name="makale_ara">Makale Ara</string>
+    <string name="profile">Profilim</string>
+    <string name="login">GİRİŞ</string>
+    <string name="OR">--- Ya Da ---</string>
+    <string name="register">Kayıt Ol</string>
 </resources>

@@ -52,6 +52,4 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation(platform("com.google.firebase:firebase-bom:32.4.0"))
 
-    implementation("org.mongodb:mongodb-driver-sync:4.11.1")
-
 }

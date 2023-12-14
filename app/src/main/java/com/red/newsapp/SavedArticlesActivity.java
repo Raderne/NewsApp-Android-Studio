@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -30,9 +31,8 @@ public class SavedArticlesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_saved_articles);
         initViews();
 
-
         savedArticlesRV.setAdapter(savedArticlesAdapter);
-        progressBar.setVisibility(ProgressBar.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
         scrollView.setVisibility(ScrollView.GONE);
 
         getCloudSavedArticles();
@@ -41,8 +41,13 @@ public class SavedArticlesActivity extends AppCompatActivity {
             if(item.getItemId() == R.id.app_bar_home){
                 Intent intent = new Intent(SavedArticlesActivity.this, NewsActivity.class);
                 startActivity(intent);
+                finish();
+            } else if(item.getItemId() == R.id.app_bar_profile){
+                Intent intent = new Intent(SavedArticlesActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                finish();
             }
-            return true;
+            return false;
         });
     }
 

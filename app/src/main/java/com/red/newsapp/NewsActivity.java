@@ -98,6 +98,10 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
                     Intent intent = new Intent(NewsActivity.this, SavedArticlesActivity.class);
                     startActivity(intent);
                     finish();
+                }else if (item.getItemId() == R.id.app_bar_profile) {
+                    Intent intent = new Intent(NewsActivity.this, ProfileActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 return false;
             }
@@ -115,6 +119,7 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
             public void onResponse(Call<Articles> call, Response<Articles> response) {
                 if (response.isSuccessful()) {
                     Articles articles = response.body();
+                    assert articles != null;
                     ArrayList<Article> articlesArray = articles.getArticles();
 
                     for (int i = 0; i < articlesArray.size(); i++) {
