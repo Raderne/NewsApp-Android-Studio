@@ -7,6 +7,7 @@
     tools:context=".ProfileActivity">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/idProfileLoginCardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="25dp"
@@ -63,7 +64,7 @@
                     android:contentDescription="@string/profile" />
 
                 <Button
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/idBtnLogin"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -86,7 +87,7 @@
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/btnRegister"
+                    android:id="@+id/idBtnRegister"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -103,7 +104,6 @@
 
 
     </androidx.cardview.widget.CardView>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/idProfileBottomNavigationBar"

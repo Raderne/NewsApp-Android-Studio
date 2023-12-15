@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.red.newsapp.Services.RetrofitInitialize;
 import com.red.newsapp.api_response.API;
 import com.red.newsapp.api_response.Articles;
 import com.red.newsapp.api_response.Article;

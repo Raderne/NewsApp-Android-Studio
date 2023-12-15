@@ -1,4 +1,4 @@
-package com.red.newsapp;
+package com.red.newsapp.Services;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
