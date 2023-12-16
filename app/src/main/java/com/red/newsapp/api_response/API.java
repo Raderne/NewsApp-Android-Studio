@@ -2,6 +2,7 @@ package com.red.newsapp.api_response;
 
 import com.red.newsapp.Services.Auth.AuthUser;
 import com.red.newsapp.Services.Auth.LoginRequest;
+import com.red.newsapp.Services.Auth.RegisterRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -20,5 +21,5 @@ public interface API {
     Call<AuthUser> login(@Body LoginRequest loginRequest);
 
     @POST("auth/register")
-    Call<AuthUser> register(@Query("email") String email);
+    Call<AuthUser> register(@Body RegisterRequest registerRequest);
 }

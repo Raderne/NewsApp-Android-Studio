@@ -47,6 +47,11 @@ public class LoginActivity extends AppCompatActivity {
             String email = emailEditText.getText().toString();
             String password = passwordEditText.getText().toString();
 
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Lütfen tüm alanları doldurunuz", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             Retrofit retrofit = ApiInitialize.apiCall();
             API api = retrofit.create(API.class);
             LoginRequest loginRequest = new LoginRequest(email, password);
@@ -55,15 +60,19 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<AuthUser> call, retrofit2.Response<AuthUser> response) {
                     if (response.isSuccessful()) {
-                        Log.e("response", "onResponse: " + response.body());
                         AuthUser authUser = response.body();
                         assert authUser != null;
                         String token = authUser.getToken();
                         String id = authUser.getId();
+                        String name = authUser.getName();
+                        String lastName = authUser.getLastName();
 
                         SharedPreferences sharedPreferences = getSharedPreferences("com.red.newsapp", MODE_PRIVATE);
                         sharedPreferences.edit().putString("token", token).apply();
                         sharedPreferences.edit().putString("id", id).apply();
+                        sharedPreferences.edit().putString("email", email).apply();
+                        sharedPreferences.edit().putString("name", name).apply();
+                        sharedPreferences.edit().putString("lastName", lastName).apply();
 
                         Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
                         startActivity(intent);
@@ -87,5 +96,11 @@ public class LoginActivity extends AppCompatActivity {
         registerTextView = findViewById(R.id.idTvRegister);
         emailEditText = findViewById(R.id.idEtEmailLogin);
         passwordEditText = findViewById(R.id.idEtPasswordLogin);
+
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+        if (email != null) {
+            emailEditText.setText(email);
+        }
     }
 }
