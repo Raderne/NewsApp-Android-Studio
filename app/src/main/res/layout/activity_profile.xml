@@ -174,15 +174,6 @@
                     android:textColor="@color/black"
                     android:textSize="26sp" />
 
-                <TextView
-                    android:id="@+id/idProfileBtnEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Edit"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryBLUE"
-                    android:textSize="20sp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -314,6 +305,19 @@
                     android:textSize="20sp" />
 
             </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/idProfileRecyclerAllArticles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_article" />
 
 
 

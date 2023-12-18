@@ -28,7 +28,7 @@
     <string name="noAccount">Hesabınız mı yok?</string>
     <string name="logout">Çıkış Yap</string>
     <string name="personal_information">Kişisel Bilgileriniz</string>
-    <string name="Edit"><![CDATA[Düzenle >]]></string>
+    <string name="Edit"><![CDATA[EKLE >]]></string>
     <string name="my_articles">Benim Makalelerim</string>
     <string name="username">kullanıcı adı</string>
     <string name="lastname">kullanıcı soyadı</string>
