@@ -40,4 +40,6 @@
     <string name="article_content">Makale İçeriği</string>
     <string name="article_urls">makale url\'si</string>
     <string name="cancel">İptal Et</string>
+    <string name="edit_article">edit article</string>
+    <string name="delete_article">delete article</string>
 </resources>

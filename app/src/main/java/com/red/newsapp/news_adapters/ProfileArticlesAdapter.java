@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,6 +55,8 @@ public class ProfileArticlesAdapter extends RecyclerView.Adapter<ProfileArticles
                 context.startActivity(intent);
             }
         });
+
+        // TODO: add edit and delete article functionality
     }
 
     @Override
@@ -63,13 +66,15 @@ public class ProfileArticlesAdapter extends RecyclerView.Adapter<ProfileArticles
 
     public class ProfileArticlesViewHolder extends RecyclerView.ViewHolder {
         TextView title, author, articleNumber;
+        ImageView editArticle, deleteArticle;
         public ProfileArticlesViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.article_title);
             author = itemView.findViewById(R.id.article_author);
             articleNumber = itemView.findViewById(R.id.article_number);
-
+            editArticle = itemView.findViewById(R.id.idBtnEditArticle);
+            deleteArticle = itemView.findViewById(R.id.idBtnDeleteArticle);
         }
     }
 }
