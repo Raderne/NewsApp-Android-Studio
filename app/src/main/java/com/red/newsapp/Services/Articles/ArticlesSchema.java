@@ -22,6 +22,15 @@ public class ArticlesSchema {
         this.category = category;
     }
 
+    public ArticlesSchema(String title, String description, String content, String url, String img, String category) {
+        this.title = title;
+        this.description = description;
+        this.content = content;
+        this.url = url;
+        this.img = img;
+        this.category = category;
+    }
+
     public String get_id() {
         return _id;
     }

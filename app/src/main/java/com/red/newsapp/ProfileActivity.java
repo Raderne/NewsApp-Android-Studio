@@ -32,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ArrayList<ArticlesSchema> articlesArrayList;
     public ProfileArticlesAdapter profileArticlesAdapter;
     private Button loginButton, registerButton, logoutButton;
-    private TextView nameTextView, lastNameTextView, emailTextView, addArticleTextView;
+    private TextView nameTextView, lastNameTextView, emailTextView, addArticleTextView, allArticlesTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,19 +93,28 @@ public class ProfileActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     ArrayList<ArticlesSchema> articles = response.body();
                     if (articles != null) {
-                        for (int i = 0; i < articles.size(); i++) {
-                            articlesArrayList.add(new ArticlesSchema(
-                                    articles.get(i).get_id(),
-                                    articles.get(i).getAuthor(),
-                                    articles.get(i).getTitle(),
-                                    articles.get(i).getDescription(),
-                                    articles.get(i).getContent(),
-                                    articles.get(i).getUrl(),
-                                    articles.get(i).getImg(),
-                                    articles.get(i).getCategory()
-                            ));
+                        if (articles.size() == 0) {
+                            allArticlesTextView.setVisibility(TextView.VISIBLE);
+                            recyclerViewAllArticles.setVisibility(RecyclerView.GONE);
+                        } else {
+                            allArticlesTextView.setVisibility(TextView.GONE);
+                            recyclerViewAllArticles.setVisibility(RecyclerView.VISIBLE);
+
+                            for (int i = 0; i < articles.size(); i++) {
+                                articlesArrayList.add(new ArticlesSchema(
+                                        articles.get(i).get_id(),
+                                        articles.get(i).getAuthor(),
+                                        articles.get(i).getTitle(),
+                                        articles.get(i).getDescription(),
+                                        articles.get(i).getContent(),
+                                        articles.get(i).getUrl(),
+                                        articles.get(i).getImg(),
+                                        articles.get(i).getCategory()
+                                ));
+                            }
+                            profileArticlesAdapter.notifyDataSetChanged();
                         }
-                        profileArticlesAdapter.notifyDataSetChanged();
+
                     }
                 } else {
                     Toast.makeText(ProfileActivity.this, "Error: " + response.code(), Toast.LENGTH_SHORT).show();
@@ -129,12 +138,11 @@ public class ProfileActivity extends AppCompatActivity {
         lastNameTextView.setText(lastName);
         emailTextView.setText(email);
 
-
-//        allArticlesTextView.setOnClickListener(v -> {
-//            Intent intent = new Intent(ProfileActivity.this, AllArticlesActivity.class);
-//            startActivity(intent);
-//            finish();
-//        });
+        addArticleTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, AddArticleActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
         logoutButton.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -168,6 +176,7 @@ public class ProfileActivity extends AppCompatActivity {
         lastNameTextView = findViewById(R.id.idTvProfileLastName);
         emailTextView = findViewById(R.id.idTvProfileEmail);
         addArticleTextView = findViewById(R.id.idProfileBtnAllArticles);
+        allArticlesTextView = findViewById(R.id.idProfileTvNoArticles);
         scrollView = findViewById(R.id.idProfileScrollView);
         recyclerViewAllArticles = findViewById(R.id.idProfileRecyclerAllArticles);
 

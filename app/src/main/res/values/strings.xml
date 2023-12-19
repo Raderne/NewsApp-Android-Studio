@@ -33,4 +33,11 @@
     <string name="username">kullanıcı adı</string>
     <string name="lastname">kullanıcı soyadı</string>
     <string name="have_an_account">Bir hesabınız mı var?</string>
+    <string name="you_have_no_articles">Hiç Makaleniz Yok</string>
+    <string name="add_article">Makale Ekle</string>
+    <string name="article_title">Makale Başlığı</string>
+    <string name="article_desc">Makale Açıklaması</string>
+    <string name="article_content">Makale İçeriği</string>
+    <string name="article_urls">makale url\'si</string>
+    <string name="cancel">İptal Et</string>
 </resources>

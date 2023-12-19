@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddArticleActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/add_article"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryBLUE"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="18dp"
+                android:background="@color/colorSubText" />
+
+            <EditText
+                android:id="@+id/idEtArticleTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints="@string/article_title"
+                android:background="@drawable/search_background"
+                android:hint="@string/article_title"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColorHint="@color/colorSubText" />
+
+            <EditText
+                android:id="@+id/idEtArticleDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints="@string/article_desc"
+                android:background="@drawable/search_background"
+                android:hint="@string/article_desc"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColorHint="@color/colorSubText" />
+
+            <EditText
+                android:id="@+id/idEtArticleContent"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints="@string/article_content"
+                android:background="@drawable/search_background"
+                android:hint="@string/article_content"
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColorHint="@color/colorSubText" />
+
+            <EditText
+                android:id="@+id/idEtArticleUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints="@string/article_title"
+                android:background="@drawable/search_background"
+                android:hint="@string/article_urls"
+                android:inputType="textUri"
+                android:padding="16dp"
+                android:textColorHint="@color/colorSubText" />
+
+            <Spinner
+                android:id="@+id/idSpCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/search_background"
+                android:entries="@array/category"
+                android:padding="16dp"
+                android:textColorHint="@color/colorSubText" />
+
+            <Button
+                android:id="@+id/idBtnAddArticle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/button_primarycolor_blue"
+                android:text="@string/add_article"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/idBtnAddArticleCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="38dp"
+                android:background="@drawable/search_background"
+                android:text="@string/cancel"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,11 +32,11 @@ public interface API {
     @GET("articles/")
     Call<ArrayList<ArticlesSchema>> getUserArticles(@Header("Authorization") String token);
 
+    @POST("articles/")
+    Call<ArticlesSchema> createArticle(@Body ArticlesSchema articlesSchema, @Header("Authorization") String token);
+
     @GET("articles/:id")
     Call<ArticlesSchema> getArticle(@Query("id") String id);
-
-    @POST("articles/")
-    Call<ArticlesSchema> saveArticle(@Body ArticlesSchema articlesSchema);
 
     @PATCH("articles/:id")
     Call<ArticlesSchema> updateArticle(@Body ArticlesSchema articlesSchema);
