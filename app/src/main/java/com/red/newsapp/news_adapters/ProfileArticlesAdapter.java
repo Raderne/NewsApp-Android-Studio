@@ -2,20 +2,28 @@ package com.red.newsapp.news_adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.red.newsapp.EditArticleActivity;
 import com.red.newsapp.NewsDetailsActivity;
 import com.red.newsapp.R;
+import com.red.newsapp.Services.ApiInitialize;
 import com.red.newsapp.Services.Articles.ArticlesSchema;
+import com.red.newsapp.api_response.API;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
 
 public class ProfileArticlesAdapter extends RecyclerView.Adapter<ProfileArticlesAdapter.ProfileArticlesViewHolder> {
     private ArrayList<ArticlesSchema> articlesArrayList;
@@ -43,7 +51,6 @@ public class ProfileArticlesAdapter extends RecyclerView.Adapter<ProfileArticles
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: add click listener
                 Intent intent = new Intent(context, NewsDetailsActivity.class);
                 intent.putExtra("title", article.getTitle());
                 intent.putExtra("author", article.getAuthor());
@@ -56,7 +63,53 @@ public class ProfileArticlesAdapter extends RecyclerView.Adapter<ProfileArticles
             }
         });
 
-        // TODO: add edit and delete article functionality
+        holder.editArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, EditArticleActivity.class);
+                intent.putExtra("id", article.get_id());
+                intent.putExtra("title", article.getTitle());
+                intent.putExtra("author", article.getAuthor());
+                intent.putExtra("description", article.getDescription());
+                intent.putExtra("content", article.getContent());
+                intent.putExtra("url", article.getUrl());
+                intent.putExtra("category", article.getCategory());
+                context.startActivity(intent);
+            }
+        });
+
+        deleteArticle(holder, article);
+    }
+
+    private void deleteArticle(ProfileArticlesViewHolder holder, ArticlesSchema article) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.red.newsapp", Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", null);
+
+        String id = article.get_id();
+        holder.deleteArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Retrofit retrofit = ApiInitialize.apiCall();
+                API api = retrofit.create(API.class);
+                Call<ArticlesSchema> call = api.deleteArticle(id, "Bearer " + token);
+                call.enqueue(new retrofit2.Callback<ArticlesSchema>() {
+                    @Override
+                    public void onResponse(Call<ArticlesSchema> call, retrofit2.Response<ArticlesSchema> response) {
+                        if (response.isSuccessful()) {
+                            articlesArrayList.remove(article);
+                            notifyDataSetChanged();
+                        }else {
+                            Toast.makeText(context, "Bir Hata Oluştu", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArticlesSchema> call, Throwable t) {
+                        Toast.makeText(context, "Hata " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
     }
 
     @Override

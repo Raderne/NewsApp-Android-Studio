@@ -14,6 +14,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface API {
@@ -35,12 +36,9 @@ public interface API {
     @POST("articles/")
     Call<ArticlesSchema> createArticle(@Body ArticlesSchema articlesSchema, @Header("Authorization") String token);
 
-    @GET("articles/:id")
-    Call<ArticlesSchema> getArticle(@Query("id") String id);
+    @PATCH("articles/{id}")
+    Call<ArticlesSchema> updateArticle(@Path("id") String id, @Body ArticlesSchema articlesSchema, @Header("Authorization") String token);
 
-    @PATCH("articles/:id")
-    Call<ArticlesSchema> updateArticle(@Body ArticlesSchema articlesSchema);
-
-    @DELETE("articles/:id")
-    Call<ArticlesSchema> deleteArticle();
+    @DELETE("articles/{id}")
+    Call<ArticlesSchema> deleteArticle(@Path("id") String id, @Header("Authorization") String token);
 }

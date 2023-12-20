@@ -16,7 +16,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiInitialize {
-    private static final String BASE_URL = "https://192.168.1.101:5000/api/";
+    private static final String BASE_URL = "https://10.4.10.159:5000/api/";
 
     public static Retrofit apiCall() {
         TrustManager[] trustAllCerts = new TrustManager[]{

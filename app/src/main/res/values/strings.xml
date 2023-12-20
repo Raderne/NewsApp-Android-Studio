@@ -42,4 +42,6 @@
     <string name="cancel">İptal Et</string>
     <string name="edit_article">edit article</string>
     <string name="delete_article">delete article</string>
+    <string name="update_article">Makaleyi güncelle</string>
+    <string name="edit_article_title">Makaleyi düzenle</string>
 </resources>
