@@ -4,6 +4,19 @@
 
 NewsApp-Android-Studio is a feature-rich Android news application developed in Java using Android Studio. The app leverages the News API from [newsapi.org](https://newsapi.org/) to fetch and display the latest news articles. The user interface utilizes RecyclerViews for a smooth and responsive presentation of news items. One of the standout features includes the ability for users to save articles, with data storage and management handled by Firebase Realtime Database. Additionally, a custom Node.js API ([Mobile-News-App-API](https://github.com/Raderne/Mobile-News-App-API)) has been created to manage user authentication, registration, and article manipulation.
 
+## Screenshots
+![Screenshot 1](screenshots/screenshot_1.png)
+![Screenshot 2](screenshots/screenshot_2.png)
+![Screenshot 3](screenshots/screenshot_3.png)
+![Screenshot 4](screenshots/screenshot_4.png)
+![Screenshot 5](screenshots/screenshot_5.png)
+![Screenshot 6](screenshots/screenshot_6.png)
+![Screenshot 7](screenshots/screenshot_7.png)
+![Screenshot 8](screenshots/screenshot_8.png)
+![Screenshot 9](screenshots/screenshot_9.png)
+![Screenshot 10](screenshots/screenshot_10.png)
+![Screenshot 11](screenshots/screenshot_11.png)
+
 ## Features
 
 - **News API Integration:** Real-time news articles are fetched from [newsapi.org](https://newsapi.org/).
